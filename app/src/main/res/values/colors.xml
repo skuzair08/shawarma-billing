@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="amber">#F59E0B</color>
+    <color name="amber_dark">#D97706</color>
+    <color name="amber_light">#FEF3C7</color>
+    <color name="amber_pale">#FFFBEB</color>
+    <color name="brown_dark">#1C1917</color>
+    <color name="brown_soft">#44403C</color>
+    <color name="bg_cream">#FAFAF9</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_muted">#A8A29E</color>
+    <color name="divider">#F0EEE8</color>
+    <color name="error_red">#EF4444</color>
+    <color name="error_light">#FCA5A5</color>
+    <color name="green">#16A34A</color>
+    <color name="green_pale">#DCFCE7</color>
+    <color name="purple_pale">#FDF4FF</color>
+    <color name="primary">#F59E0B</color>
+    <color name="primaryDark">#D97706</color>
+</resources>

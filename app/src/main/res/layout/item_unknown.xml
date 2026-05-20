@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/item_unknown_bg"
+    android:padding="12dp"
+    android:layout_marginBottom="10dp">
+
+    <TextView
+        android:id="@+id/unknown_qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="11sp"
+        android:textColor="@color/amber_dark"
+        android:textStyle="bold"
+        android:layout_marginBottom="6dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Item Name (edit if typo):"
+        android:textSize="11sp"
+        android:textColor="@color/text_muted"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/unknown_name"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textSize="13sp"
+        android:background="@drawable/input_bg"
+        android:layout_marginBottom="8dp"
+        android:inputType="textCapWords" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price ₹:"
+            android:textSize="13sp"
+            android:textColor="@color/text_muted"
+            android:layout_marginEnd="8dp" />
+
+        <EditText
+            android:id="@+id/unknown_price"
+            android:layout_width="120dp"
+            android:layout_height="44dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="14sp"
+            android:background="@drawable/input_bg"
+            android:inputType="number"
+            android:hint="Enter price" />
+    </LinearLayout>
+
+</LinearLayout>

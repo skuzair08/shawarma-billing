@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- EMPTY STATE -->
+    <LinearLayout
+        android:id="@+id/bill_empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🥙"
+            android:textSize="64sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Koi bill nahi"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/brown_dark"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pehle Input tab mein order process karein"
+            android:textSize="14sp"
+            android:textColor="@color/text_muted"
+            android:layout_marginTop="8dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- BILL CONTENT -->
+    <LinearLayout
+        android:id="@+id/bill_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- STATS GRID -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <!-- Grand Total -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/amber">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GRAND TOTAL" android:textSize="10sp" android:textColor="@color/brown_soft" android:letterSpacing="0.08" />
+                    <TextView android:id="@+id/tv_grand_total" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="₹0" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/brown_dark" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Total Qty -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TOTAL PIECES" android:textSize="10sp" android:textColor="@color/text_muted" android:letterSpacing="0.08" />
+                    <TextView android:id="@+id/tv_total_qty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/brown_dark" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="UNIQUE ITEMS" android:textSize="10sp" android:textColor="@color/text_muted" android:letterSpacing="0.08" />
+                    <TextView android:id="@+id/tv_unique_items" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/brown_dark" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AVG / PIECE" android:textSize="10sp" android:textColor="@color/text_muted" android:letterSpacing="0.08" />
+                    <TextView android:id="@+id/tv_avg_unit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="₹0" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/brown_dark" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- BILL ITEMS LIST -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Header Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:background="@color/bg_cream"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:gravity="center_vertical">
+
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:text="ITEM" android:textSize="11sp" android:textColor="@color/text_muted" android:letterSpacing="0.05" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="QTY" android:textSize="11sp" android:textColor="@color/text_muted" android:letterSpacing="0.05" android:gravity="center" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="RATE" android:textSize="11sp" android:textColor="@color/text_muted" android:letterSpacing="0.05" android:gravity="end" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="TOTAL" android:textSize="11sp" android:textColor="@color/text_muted" android:letterSpacing="0.05" android:gravity="end" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_bill_items"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ACTION BUTTONS -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save_history"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginBottom="8dp"
+            android:text="💾 Save to History"
+            android:textColor="@color/brown_dark"
+            app:backgroundTint="@color/amber"
+            app:cornerRadius="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_print"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="🖨 Print"
+                android:textColor="@color/brown_dark"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@color/amber"
+                app:cornerRadius="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_share_bill"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="📤 Share"
+                android:textColor="@color/brown_dark"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@color/amber"
+                app:cornerRadius="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.ShawarmaApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/amber</item>
+        <item name="colorPrimaryVariant">@color/amber_dark</item>
+        <item name="colorOnPrimary">@color/brown_dark</item>
+        <item name="colorSecondary">@color/amber_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:colorBackground">@color/bg_cream</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/brown_dark</item>
+        <item name="android:windowBackground">@color/bg_cream</item>
+        <item name="android:statusBarColor">@color/amber_dark</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+
+    <style name="ToolbarTitle" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+</resources>
